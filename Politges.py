@@ -37,3 +37,4 @@ os.execv(sys.executable, [sys.executable] + sys.argv)
 
 # M'agrada el pa amb tomàquet
 # En realitat m'encanta!
+# Juasjuasjuas
