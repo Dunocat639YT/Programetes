@@ -34,3 +34,5 @@ print(" ")
 os.system("pause")
 print (" ")
 os.execv(sys.executable, [sys.executable] + sys.argv)
+
+# M'agrada el pa amb tomàquet
