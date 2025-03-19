@@ -1,4 +1,6 @@
 import time
+from datetime import datetime
+hora_actual = datetime.now().hour
 
 print(" ")
 print("Hola")
@@ -8,14 +10,23 @@ print(" ")
 nom = input("Com et dius? ")
 
 print(" ")
-print("Bona tarda, " + nom + ". Tens pinta de ser profe.")
+if hora_actual < 12:
+    hora = ("Bon dia")
+elif hora_actual < 18:
+    hora = ("Bona tarda")
+elif hora_actual < 21:
+    hora = ("Bona vesprada")
+else:
+    hora = ("Bona nit")
+
+print(f"{hora}, {nom}! Tens pinta de ser profe.")
 time.sleep(2)
 
 print(" ")
 profe = input("Ets profe? (sí/no) ")
 print(" ")
 if profe == "sí":
-    print("Molt bé, segur que estàs fent una bona feina, " + nom)
+    print(f"Molt bé, segur que estàs fent una bona feina, {nom}.")
 else: 
     print("Vaja, els meus instints m'han fallat.")
 
