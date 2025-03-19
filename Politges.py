@@ -7,6 +7,7 @@ YELLOW = "\033[93m"
 BLUE = "\033[94m"
 PURPLE = "\033[95m"
 RESET = "\033[0m"
+#bon dia
 
 resposta = input(f"{YELLOW}Benvingut a l'aplicació de càlcul de relació de transmissió de politges!{RESET}\n"
                  f"Selecciona {GREEN}1{RESET} si vols calcular-ho amb la {BLUE}velocitat{RESET} i {GREEN}2{RESET} si vols fer-ho amb el {BLUE}diàmetre{RESET}: ")
