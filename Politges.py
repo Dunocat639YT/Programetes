@@ -20,13 +20,21 @@ if resposta == 1:
     print(f"La relació de transmissió és {GREEN}{str(int(N2) / int(N1))}{RESET}")
 
 if resposta == 2:
-    D2 = input("Posa el diàmetre de la politja conduïda, si us plau: ")
+    D1 = input(f"{PURPLE}Posa el diàmetre de la politja conductora, si us plau:{RESET} ")
     print(" ")
-    D1 = input("Molt bé, ara el de la politja conductora: ")
+    D2 = input(f"{PURPLE}Molt bé, ara el de la politja conduïda:{RESET} ")
     print(" ")
-    print("La relació de transmició és " + str(int(D2) / int(D1)))
+    resultat2 = str(int(D1) / int(D2)
+    print(f"La relació de transmició és "+{GREEN}resultat2{RESET})
+    if resultat2 < 1:
+        print("La velocitat de la roda conduïda és menor que la de la roda motriu, però el moment sobre l’eix resultant és més gran.")
+    if resultat2 > 1:
+        print("La velocitat de la roda conduïda és més gran que la de la corriola motriu, però el moment eix resultant és menor.")
 
-if resposta != 1 and resposta !=2:
+if resposta == 3:
+
+
+if resposta != 1 and resposta !=2 and resposta !=3:
     print(f"{RED}No has seleccionat cap opcció vàlida, tros de quòniam{RESET}")
     print(" ")
     os.execv(sys.executable, [sys.executable] + sys.argv)
