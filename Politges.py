@@ -25,8 +25,8 @@ if resposta == 2:
     print(" ")
     D2 = input(f"{PURPLE}Molt bé, ara el de la politja conduïda:{RESET} ")
     print(" ")
-    resultat2 = (float(D1) / float(D2)
-    print(f"La relació de transmició és "+{GREEN}resultat2{RESET})
+    resultat2 = (float(D1) / float(D2))
+    print(f"La relació de transmició és {GREEN}{resultat2}{RESET}")
     if resultat2 < 1:
         print("La velocitat de la roda conduïda és menor que la de la roda motriu, però el moment sobre l'eix resultant és més gran.")
     if resultat2 > 1:
