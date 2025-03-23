@@ -1,6 +1,8 @@
 import random
 import time
 from datetime import datetime
+import os
+import sys
 
 # Definir hora actual
 hora_actual = datetime.now().hour
@@ -51,7 +53,7 @@ def joc_endevina():
                 print(" ")
             else:
                 print(f"{YELLOW}Felicitats! Has endevinat el número{RESET} {PURPLE}{numero_secret}{RESET} {YELLOW}en{RESET} {PURPLE}{intents}{RESET} intents.")
-                time.sleep(10)
+                time.sleep(2)
                 print(" ")
                 break
         # Si l'usuari és un tros de quòniam i no introdueix un número
@@ -63,3 +65,5 @@ def joc_endevina():
 
 # Executa tot el joc
 joc_endevina()
+os.system("pause")
+os.execv(sys.executable, [sys.executable] + sys.argv)
