@@ -51,6 +51,8 @@ def joc_endevina():
                 print(" ")
             else:
                 print(f"{YELLOW}Felicitats! Has endevinat el número{RESET} {PURPLE}{numero_secret}{RESET} {YELLOW}en{RESET} {PURPLE}{intents}{RESET} intents.")
+                time.sleep(10)
+                print(" ")
                 break
         # Si l'usuari és un tros de quòniam i no introdueix un número
         except ValueError:
