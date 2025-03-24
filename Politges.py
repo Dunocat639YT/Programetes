@@ -8,7 +8,6 @@ YELLOW = "\033[93m"
 BLUE = "\033[94m"
 PURPLE = "\033[95m"
 RESET = "\033[0m"
-#bon dia
 
 # Salutació inicial
 print(f"{YELLOW}Benvingut a l'aplicació de càlcul de relació de transmissió de politges!{RESET}")
@@ -84,4 +83,3 @@ print()
 os.execv(sys.executable, [sys.executable] + sys.argv)
 
 # M'agrada el pa amb tomàquet
-# En realitat m'encanta!
