@@ -1,6 +1,8 @@
 import random
 import time
 from datetime import datetime
+import os
+import sys
 
 # Definir hora actual
 hora_actual = datetime.now().hour
@@ -15,13 +17,13 @@ RESET = "\033[0m"
 
 # Configurar salutació en funció de l'hora
 if hora_actual < 12:
-    hora = ("доброго ранку")
+    hora = ("Bon dia")
 elif hora_actual < 18:
-    hora = ("доброго дня")
+    hora = ("Bona tarda")
 elif hora_actual < 21:
-    hora = ("доброго дня")
+    hora = ("Bona tarda")
 else:
-    hora = ("на добраніч")
+    hora = ("Bona nit")
 
 # Comença el joc
 def joc_endevina():
@@ -29,35 +31,39 @@ def joc_endevina():
     intents = 0
     
     #Salutació
-    print(f"{YELLOW}{hora}, Ласкаво просимо до гри! Я придумав число від 1 до 100. Давайте перевіримо, чи вгадаєте ви, яке саме!{RESET}")
+    print(f"{YELLOW}{hora}, benvingut al joc! He pensat un número entre 1 i 100. A veure si l’endevines!{RESET}")
     time.sleep(2)
     print(" ")
 
     while True: 
         try: 
             # Pregunta el número
-            endevina = int(input(f"{GREEN}Як ви думаєте, яке число я придумав?{RESET} "))
+            endevina = int(input(f"{GREEN}Quin número creus que he pensat?{RESET} "))
             intents += 1
             print(" ")
 
-            # Comprova si el número és correcte i dona una pista l'usuari
+            # Comprova si el número és correcte i dona una pista a l'usuari
             if endevina > numero_secret:
-                print(f"{RED}Число, про яке я думав, менше!{RESET}")
+                print(f"{RED}El número que he pensat és més petit!{RESET}")
                 time.sleep(1)
                 print(" ")
             elif endevina < numero_secret:
-                print(f"{RED}Число, про яке я думав, більше!{RESET}")
+                print(f"{RED}El número que he pensat és més gran!{RESET}")
                 time.sleep(1)
                 print(" ")
             else:
-                print(f"{YELLOW}Щиро вітаю! Ви вгадали номер{RESET} {PURPLE}{numero_secret}{RESET} {YELLOW}із{RESET} {PURPLE}{intents}{RESET} спроб.")
+                print(f"{YELLOW}Felicitats! Has endevinat el número{RESET} {PURPLE}{numero_secret}{RESET} {YELLOW}en{RESET} {PURPLE}{intents}{RESET} intents.")
+                time.sleep(2)
+                print(" ")
                 break
         # Si l'usuari és un tros de quòniam i no introdueix un número
         except ValueError:
             print(" ")
-            print(f"{RED} Давайте подивимося маленький шматочок quòniam, вам потрібно ввести ціле число!{RESET}")
+            print(f"{RED}Escolta, tros de quòniam, has d'introduir un número sencer!{RESET}")
             time.sleep(2)
             print(" ")
 
 # Executa tot el joc
 joc_endevina()
+os.system("pause")
+os.execv(sys.executable, [sys.executable] + sys.argv)
