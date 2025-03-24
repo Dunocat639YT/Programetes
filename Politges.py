@@ -38,7 +38,7 @@ if resposta == 1:
         print(f"Es tracta d'un mecanisme {BLUE}reductor de velocitat{RESET}.")
         time.sleep(2)
     # Quan és multiplicador de velocitat
-    if resultat1 > 1:
+    elif resultat1 > 1:
         print()
         print(f"Es tracta d'un mecanisme {BLUE}multiplicador de velocitat{RESET}.")
         time.sleep(2)
