@@ -16,7 +16,7 @@ try:
     x = input("Dis-me un numero aleatori ")
     y = input("Ara dis-me un altre numero aleatori ")
 except:
-    print("Sembla que la inteligència no és lo teu.
+    print("Sembla que la inteligència no és lo teu.")
     time.sleep(1)
     print("He dit un número.")
     time.sleep(2)
