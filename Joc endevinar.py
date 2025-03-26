@@ -45,15 +45,13 @@ def joc_endevina():
             # Comprova si el número és correcte i dona una pista a l'usuari
             if endevina > numero_secret:
                 print(f"{RED}El número que he pensat és més petit!{RESET}")
-                time.sleep(1)
                 print(" ")
             elif endevina < numero_secret:
                 print(f"{RED}El número que he pensat és més gran!{RESET}")
-                time.sleep(1)
                 print(" ")
             else:
                 print(f"{YELLOW}Felicitats! Has endevinat el número{RESET} {PURPLE}{numero_secret}{RESET} {YELLOW}en{RESET} {PURPLE}{intents}{RESET} intents.")
-                time.sleep(2)
+                time.sleep(10)
                 print(" ")
                 break
         # Si l'usuari és un tros de quòniam i no introdueix un número
