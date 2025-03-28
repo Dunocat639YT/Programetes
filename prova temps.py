@@ -9,3 +9,5 @@ elif hora_actual < 21:
     print("Bona vesprada!")
 else:
     print("Bona nit!")
+
+print(hora_actual)
