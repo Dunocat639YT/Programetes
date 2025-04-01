@@ -22,7 +22,7 @@ def programa():
           print(f"{GREEN}La contrassenya és correcta!{RESET}")
           time.sleep(1)
           print()
-          input(f"{PURPLE}Prem 'Enter' per continuar...{RESET}")
+          input(f"{PURPLE}Prem 'Enter' per continuar... {RESET}")
           break
         else:
             print()
