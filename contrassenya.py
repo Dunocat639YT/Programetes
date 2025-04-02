@@ -32,7 +32,7 @@ def programa():
             intents += 1
         if intents == 3:
             print()
-            canviar = input(f"{RED}Has oblidat la contrassenya? Si vols, la pots canviar. Y/N?{RESET}")
+            canviar = input(f"{RED}Has oblidat la contrassenya? Si vols, la pots canviar. Y/N? {RESET}")
             if canviar.lower() == "y":
                 print()
                 nova_contrassenya = input(f"{YELLOW}Introdueix la nova contrassenya: {RESET}")
