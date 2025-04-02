@@ -7,7 +7,7 @@ BLUE = "\033[94m"
 PURPLE = "\033[95m"
 RESET = "\033[0m"
 
-contassenya_guardada = "Gatets123"
+contassenya_guardada = open("jejeje1.txt", "r").read()
 
 def programa():
     contrassenya_adivinada = False
