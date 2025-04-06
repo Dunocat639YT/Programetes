@@ -1,3 +1,2 @@
-def saluda( nom):
-  print(f"Hola {nom}, benvingut") 
-
+def saluda(nom):
+    print(f"Hola {nom}, benvingut")
