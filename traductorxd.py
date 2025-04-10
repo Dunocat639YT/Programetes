@@ -14,3 +14,9 @@ idiomes ={
     "ucrainès": "uk",
     "Rus": "ru"
 }
+
+pregunta = input("Pryvit, David! Yak spravy?")
+if pregunta == "Dobre":
+    print("Duzhe dobre!")
+elif pregunta == "Pogano":
+    print(":(")
