@@ -1,5 +1,6 @@
 import time
 from datetime import datetime
+
 hora_actual = datetime.now().hour
 
 # Salutació
@@ -14,13 +15,13 @@ nom = input("Com et dius? ")
 # Configura la salutació en funció de l'hora
 print(" ")
 if hora_actual < 12:
-    hora = ("Bon dia")
+    hora = "Bon dia"
 elif hora_actual < 18:
-    hora = ("Bona tarda")
+    hora = "Bona tarda"
 elif hora_actual < 21:
-    hora = ("Bona vesprada")
+    hora = "Bona vesprada"
 else:
-    hora = ("Bona nit")
+    hora = "Bona nit"
 
 # Salutació personalitzada
 print(f"{hora}, {nom}! Tens pinta de ser profe.")
@@ -33,7 +34,7 @@ profe = input("Ets profe? (sí/no) ").strip().lower()
 print(" ")
 if profe == "sí":
     print(f"Molt bé, segur que estàs fent una bona feina, {nom}.")
-else: 
+else:
     print("Vaja, els meus instints m'han fallat.")
 
 time.sleep(2)
@@ -65,9 +66,11 @@ if profe == "sí":
         print("Segur que sí, no et preocupis!")
     else:
         print("Interessant resposta!")
-    
+
     # Pregunta si té un alumne preferit
-    alumne_preferit = input("Tens algun alumne preferit? (sí/no/no ho sé) ").strip().lower()
+    alumne_preferit = (
+        input("Tens algun alumne preferit? (sí/no/no ho sé) ").strip().lower()
+    )
     print(" ")
     if alumne_preferit == "sí":
         print("Molt bé, segur que és un bon alumne.")
@@ -80,7 +83,9 @@ if profe == "sí":
     print(" ")
 
     # Pregunta qui és l'alumne preferit
-    alumnes_preferit_qui = input("I ara digue'm bon senyor, qui és aquest alumne preferit? (Posa el nom) ")
+    alumnes_preferit_qui = input(
+        "I ara digue'm bon senyor, qui és aquest alumne preferit? (Posa el nom) "
+    )
     time.sleep(2)
     print(" ")
     print(f"Oh, així que {alumnes_preferit_qui}... Ja ho sospitava!")

@@ -7,6 +7,7 @@ BLUE = "\033[94m"
 PURPLE = "\033[95m"
 RESET = "\033[0m"
 
+
 def bonic():
     nombre = input(f"{YELLOW}Escriu un nombre de més d'una xifra: ")
     print()
@@ -30,6 +31,7 @@ def bonic():
         print()
 
     time.sleep(2)
+
 
 while True:
     bonic()

@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import tkk
 from deep_translator import GoogleTranslator
 
-idiomes ={
+idiomes = {
     "Català": "ca",
     "Castellà": "es",
     "Anglès": "en",
@@ -12,7 +12,7 @@ idiomes ={
     "Portuguès": "pt",
     "Neerlandès": "nl",
     "ucrainès": "uk",
-    "Rus": "ru"
+    "Rus": "ru",
 }
 
 pregunta = input("Pryvit, David! Yak spravy?")
