@@ -4,7 +4,7 @@ int main(){
 
     // variable = Reusable container for a value.
     //            Behaves as if it were the value it contains.
-    
+
     int age = 25;
     int year = 2025;
     int quantity = 1;
