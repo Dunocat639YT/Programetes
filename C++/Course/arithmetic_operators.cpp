@@ -35,5 +35,7 @@ int main(){
 
     std::cout << students << "\n";
 
+    //system("PAUSE");
+
     return 0;
 }
