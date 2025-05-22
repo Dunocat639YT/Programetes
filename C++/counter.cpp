@@ -15,6 +15,8 @@ int main(){
         std::cout << "There are " << number << " niggers" << '\n';
     }
 
+    system("PAUSE");
+
 
     return 0;
 }
