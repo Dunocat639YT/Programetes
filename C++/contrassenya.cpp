@@ -2,9 +2,15 @@
 #include <string>
 #include <vector>
 #include <chrono>
-#include <cmath>
+#include <cstdint>
+#include <limits>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::string;
+using std::vector;
+using std::size_t;
+using std::uint64_t;
 using namespace std::chrono;
 
 class PasswordCracker {
@@ -34,15 +40,17 @@ public:
         cout << "Començant l'atac de força bruta...\n\n";
     }
     
-    string generatePassword(long long index, int length) {
-        string password = "";
-        long long temp = index;
-        
-        for (int i = 0; i < length; i++) {
-            password = charset[temp % charset.length()] + password;
-            temp /= charset.length();
+    string generatePassword(uint64_t index, int length) {
+        string password;
+        password.reserve(length);
+        uint64_t base = static_cast<uint64_t>(charset.length());
+
+        for (int i = 0; i < length; ++i) {
+            char c = charset[index % base];
+            password.insert(password.begin(), c);
+            index /= base;
         }
-        
+
         return password;
     }
     
@@ -67,12 +75,27 @@ public:
         cout << "Contrasenyes comunes fallides. Començant força bruta...\n";
         
         // Força bruta per longitud creixent (més eficient)
-        for (int len = 1; len <= targetPassword.length(); len++) {
+        for (int len = 1; len <= static_cast<int>(targetPassword.length()); len++) {
             cout << "Provant contrasenyes de longitud " << len << "...\n";
             
-            long long maxCombinations = pow(charset.length(), len);
-            
-            for (long long i = 0; i < maxCombinations; i++) {
+            // Compute power using integer arithmetic and check for overflow
+            uint64_t maxCombinations = 1;
+            uint64_t base = static_cast<uint64_t>(charset.length());
+            bool overflow = false;
+            for (int p = 0; p < len; ++p) {
+                if (maxCombinations > std::numeric_limits<uint64_t>::max() / base) {
+                    overflow = true;
+                    break;
+                }
+                maxCombinations *= base;
+            }
+
+            if (overflow) {
+                cout << "Nombre de combinacions massa gran per calcular; abortant aquesta longitud.\n";
+                continue;
+            }
+
+            for (uint64_t i = 0; i < maxCombinations; ++i) {
                 attempts++;
                 string candidate = generatePassword(i, len);
                 
@@ -87,13 +110,16 @@ public:
                 if (candidate == targetPassword) {
                     auto end = high_resolution_clock::now();
                     auto duration = duration_cast<milliseconds>(end - start);
-                    
+
                     cout << "\n=== CONTRASENYA TROBADA ===\n";
                     cout << "Contrasenya: " << candidate << "\n";
                     cout << "Intents totals: " << attempts << "\n";
                     cout << "Temps total: " << duration.count() << " ms\n";
-                    cout << "Velocitat: " << (attempts * 1000.0) / duration.count() << " intents/segon\n";
-                    
+                    if (duration.count() > 0)
+                        cout << "Velocitat: " << (attempts * 1000.0) / duration.count() << " intents/segon\n";
+                    else
+                        cout << "Velocitat: N/A (temps massa curt)\n";
+
                     return true;
                 }
             }
@@ -103,20 +129,34 @@ public:
     }
     
     void showStatistics() {
-        long long totalCombinations = 0;
-        for (int len = 1; len <= targetPassword.length(); len++) {
-            totalCombinations += pow(charset.length(), len);
+        uint64_t totalCombinations = 0;
+        uint64_t base = static_cast<uint64_t>(charset.length());
+        for (int len = 1; len <= static_cast<int>(targetPassword.length()); ++len) {
+            // prevent overflow
+            uint64_t v = 1;
+            bool overflow = false;
+            for (int p = 0; p < len; ++p) {
+                if (v > std::numeric_limits<uint64_t>::max() / base) { overflow = true; break; }
+                v *= base;
+            }
+            if (overflow) {
+                cout << "Combinacions totals: massa grans per calcular exactament.\n";
+                totalCombinations = 0;
+                break;
+            }
+            totalCombinations += v;
         }
         
         cout << "\n=== ESTADÍSTIQUES ===\n";
         cout << "Conjunt de caràcters: " << charset << "\n";
         cout << "Longitud del conjunt: " << charset.length() << "\n";
         cout << "Longitud de la contrasenya: " << targetPassword.length() << "\n";
-        cout << "Combinacions totals possibles: " << totalCombinations << "\n";
+        if (totalCombinations > 0)
+            cout << "Combinacions totals possibles: " << totalCombinations << "\n";
         cout << "Temps estimat màxim (pitjor cas): ";
         
         // Estimació basada en velocitat típica
-        double secondsMax = totalCombinations / 100000.0; // ~100k intents/seg
+        double secondsMax = (totalCombinations > 0) ? (totalCombinations / 100000.0) : -1.0; // ~100k intents/seg
         if (secondsMax < 60) {
             cout << secondsMax << " segons\n";
         } else if (secondsMax < 3600) {
