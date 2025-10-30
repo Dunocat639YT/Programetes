@@ -1,7 +1,12 @@
 #include <iostream>
+using namespace std;
+
 
 int main(){
-    std::string computer;
-    std::string player;
+    string computer;
+    string player;
     bool game = true;
+
+    
+    return 0;
 }
