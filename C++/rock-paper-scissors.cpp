@@ -12,17 +12,20 @@ int main(){
 
     string jugador;
 
-    cout << "************* Pedra, paper i tisores! *************" << '\n' << '\n';
-    
-    do{
-        cout << "Quin és el teu moviment?" << '\n';
-        cin >> jugador;
+    while (true){
         
-    } while(jugador != "pedra" && jugador != "paper" && jugador != "tisores");
+        cout << "************* Pedra, paper i tisores! *************" << '\n' << '\n';
+        
+        do{
+            cout << "Quin és el teu moviment?" << '\n';
+            cin >> jugador;
+            
+        } while(jugador != "pedra" && jugador != "paper" && jugador != "tisores");
 
-    maquina();
+        maquina();
 
-    comprovar();
+        comprovar();
+    }
 
     
     return 0;
@@ -46,15 +49,16 @@ int comprovar(int ordinador, string jugador){
 
             if (jugador == "pedra"){
                 cout << "Empat!" << '\n' << '\n' << '\n';
+                break;
             }
             else if (jugador == "paper"){
                 cout << "Has guanyat!" << '\n' << '\n' << '\n';
+                break;
             }
             else{
                 cout << "Has perdut!" << '\n' << '\n' << '\n';
+                break;
             }
-            
-            break;
 
         case 2:
 
@@ -63,14 +67,16 @@ int comprovar(int ordinador, string jugador){
 
             if (jugador == "pedra"){
                 cout << "Has perdut!" << '\n' << '\n' << '\n';
+                break;
             }
             else if (jugador == "paper"){
                 cout << "Empat!" << '\n' << '\n' << '\n';
+                break;
             }
             else{
                 cout << "Has guanyat!" << '\n' << '\n' << '\n';
+                break;
             }
-            break;
 
         case 3:
 
@@ -79,14 +85,16 @@ int comprovar(int ordinador, string jugador){
 
             if (jugador == "pedra"){
                 cout << "Has guanyat!" << '\n' << '\n' << '\n';
+                break;
             }
             else if (jugador == "paper"){
                 cout << "Has perdut!!" << '\n' << '\n' << '\n';
+                break;
             }
             else{
                 cout << "Empat!" << '\n' << '\n' << '\n';
+                break;
             }
-            break;
     }
     
 }
