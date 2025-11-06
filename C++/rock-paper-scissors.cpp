@@ -22,6 +22,7 @@ int main(){
             
         } while(jugador != "pedra" && jugador != "paper" && jugador != "tisores");
 
+        
         maquina();
 
         comprovar();
