@@ -4,8 +4,8 @@
 
 using namespace std;
 
-int maquina(int ordinador);
-int comprovar(int ordinador, string jugador);
+int maquina();
+void comprovar(int ordinador, string jugador);
 
 
 int main(){
@@ -17,15 +17,22 @@ int main(){
         cout << "************* Pedra, paper i tisores! *************" << '\n' << '\n';
         
         do{
-            cout << "Quin és el teu moviment?" << '\n';
+            cout << "Quin és el teu moviment? ";
             cin >> jugador;
+            cout << '\n';
             
         } while(jugador != "pedra" && jugador != "paper" && jugador != "tisores");
 
         
-        maquina();
+        int ordinador = maquina();
 
-        comprovar();
+        comprovar(ordinador, jugador);
+
+        cout << "Enter per a continuar... ";
+        cin.ignore();
+        cin.get();
+
+        cout << '\n' << '\n' << '\n';
     }
 
     
@@ -40,7 +47,7 @@ int maquina(){
     return ordinador;
 }
 
-int comprovar(int ordinador, string jugador){
+void comprovar(int ordinador, string jugador){
 
     switch (ordinador)
     {
