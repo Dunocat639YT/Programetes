@@ -18,17 +18,17 @@
                 return x * y;
 
             default:
-                return;
+                return 0;
 
         }
     }
 
-    void puntets(){
+    void puntets(int temps){
         for (int i = 0; i < 3; i++)
         {
             std::cout << ".";
             std::cout.flush();
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(temps));
         }
         std::cout << '\n';
         
@@ -38,7 +38,7 @@ int main(){
 
     bool calcu = true;
 
-    while (calcu){
+    while (calcu == true){
 
         char operador;
         double x;
@@ -59,9 +59,18 @@ int main(){
         std::cin >> operador;
         std::cout << '\n' << '\n';
 
-        std::cout << "Perfecte!" << '\n'  << '\n' << "Calculant";
+        std::cout << "Perfecte!" << '\n'  << '\n';
 
-        puntets();
+        std::cout << "Netejant buffer de dades";
+        puntets(500);
+
+        std::cout << "Calculant variables abstractes";
+        puntets(500);
+
+        std::cout << "Descarregant resultats quàntics";
+        puntets(500);
+
+
 
         std::cout << '\n';
         std::cout << '\n';
@@ -78,14 +87,16 @@ int main(){
         }
         else if(continuar == 'n' || continuar == 'N'){
             std::cout << "Pos vale :(" << '\n';
-            puntets();
+            puntets(1000);
             calcu = false;
         }
         else{
             std::cout << "No sé que coi has dit però m'ho prendré com un no";
-            puntets();
+            puntets(1000);
             calcu = false;
         }
+
+        return 0;
         
 
     }
