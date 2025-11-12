@@ -14,7 +14,7 @@
             case '/':
                 return x / y;
             
-            case 'x':
+            case '*':
                 return x * y;
 
             default:
