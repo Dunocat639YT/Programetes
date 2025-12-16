@@ -10,8 +10,7 @@
 _ZNSt6chrono8durationIxSt5ratioILx1ELx1000000000EEEC1IxvEERKT_:
 .LFB2591:
 	push	rbp
-	.seh_pushreg	rbp
-	mov	rbp, rsp
+	.seh_pushreg	r	mov	rbp, rsp
 	.seh_setframe	rbp, 0
 	.seh_endprologue
 	mov	QWORD PTR 16[rbp], rcx

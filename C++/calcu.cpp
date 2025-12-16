@@ -61,7 +61,7 @@ int main(){
 
         std::cout << "Perfecte!" << '\n'  << '\n';
 
-        std::cout << "Netejant buffer de dades";
+        std::cout << "Netejant bufLfer de dades";
         puntets(500);
 
         std::cout << "Calculant variables abstractes";
