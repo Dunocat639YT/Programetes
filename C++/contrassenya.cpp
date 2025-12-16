@@ -21,7 +21,7 @@ private:
     long long attempts;
     
 public:
-    PasswordCracker() : attempts(0) {
+    PasswordCracker() : attempts(0) {dfasf
         // Conjunt de caràcters més comuns (per eficiència)
         charset = "abcdefghijklmnopqrstuvwxyz0123456789";
         maxLength = 8; // Límit per evitar temps excessius
