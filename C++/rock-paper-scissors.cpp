@@ -1,12 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "rock-paper-scissors.h"
+
 
 using namespace std;
-
-int maquina();
-void comprovar(int ordinador, string jugador);
-
 
 int main(){
 
@@ -29,7 +27,7 @@ int main(){
         comprovar(ordinador, jugador);
 
         cout << "Enter per a continuar... ";
-        cin.ignore();
+        cin.ignore();int comprovar(int a, int b);
         cin.get();
 
         cout << '\n' << '\n' << '\n';

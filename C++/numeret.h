@@ -1,0 +1,1 @@
+int comprovar(int a, int b);
