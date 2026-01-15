@@ -1,0 +1,9 @@
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/Test.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/edit_cache.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/rebuild_cache.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/list_install_components.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/install.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/install/local.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/install/strip.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/Test_autogen_timestamp_deps.dir
+/home/dunocat639/Documents/Repos/Programetes/build/CMakeFiles/Test_autogen.dir
