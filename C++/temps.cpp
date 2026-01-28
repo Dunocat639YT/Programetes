@@ -19,8 +19,6 @@ int main() {
     std::cout << "Dies a anys" << '\n';
     std::cout << "Anys a dies" << '\n';
 
-    std::
-
 
     return 0;
 }
