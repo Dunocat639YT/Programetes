@@ -21,7 +21,7 @@ int main(){
         std::cout << "Així que de ºF a ºC, eh?" << '\n' << '\n' << "Introdueix el valor en ºF: ";
         std::cin >> F;
         std::cout << '\n';
-        C = (F - 32) * (5/9);
+        C = (F - 32) * (5.0/9.0);
         std::cout << "El resultat és " << C << " ºC" << '\n' << '\n';
     }
     else{
