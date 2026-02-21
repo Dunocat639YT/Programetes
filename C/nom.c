@@ -1,28 +1,28 @@
 #include <stdio.h>
 
-int majorEdat(int edat) {
+bool majorEdat(int edat) {
     if (edat >= 18) {
-        return 1;
+        return true;
     }
     else {
-        return 0;
+        return false;
     }
     
 }
 
 int main() {
 
-    char nom[50] = "";
+    char nom[50]; 
     int edat;
 
-    printf("Com et dius, jove? \n");
-    scanf("%s", &nom);
+    printf("Com et dius, jove? ");
+    fgets(nom, sizeof(nom), stdin);
 
     printf("Quants anys tens? ");
     scanf("%d", &edat);
 
     printf("Et dius %s i ", nom);
-    if (majorEdat(edat) == 1) {
+    if (majorEdat(edat)) {
         printf("ets major d'edat perquè tens %d anys.", edat);
     }
     else {
