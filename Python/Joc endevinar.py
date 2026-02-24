@@ -30,7 +30,7 @@ def joc_endevina():
     numero_secret = random.randint(1, 100)
     intents = 0
     
-    #Salutació
+    # Salutació
     print(f"{YELLOW}{hora}, benvingut al joc! He pensat un número entre 1 i 100. A veure si l’endevines!{RESET}")
     time.sleep(2)
     print(" ")

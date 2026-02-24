@@ -37,7 +37,7 @@ int main(void) {
 
     float mitja = suma / n_examens; // Calculem mitja
 
-    printf("La teva nota mitjana és de %.2f, tens un %s!", mitja, final(mitja)); // Missatge final
+    printf("La teva nota mitjana és de %.2f, tens un %s!\n", mitja, final(mitja)); // Missatge final
 
 
     return 0;
