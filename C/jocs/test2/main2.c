@@ -5,7 +5,7 @@ void controls(int key, float *posició, float velocitat) {
     if(IsKeyDown(key)) *posició += velocitat;
 }
 
-int maint(void) {
+int main(void) {
 
     const int ampladaPantalla = 500;
     const int alturaPantalla = 500;
@@ -23,6 +23,8 @@ int maint(void) {
 
         controls(KEY_A, &posicióBola.x, velocitatBola);
     }
+
+    CloseWindow();
 
 
 
