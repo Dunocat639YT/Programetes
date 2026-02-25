@@ -4,10 +4,10 @@ CFLAGS = -Wall -Wextra -Werror -std=c23
 LDFLAGS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
 # Nom de l'executable
-TARGET = main
+TARGET = main2
 
 # Fitxers font
-SRC = main.c
+SRC = main2.c
 
 # Regla principal (la que s'executa per defecte)
 all: $(TARGET)

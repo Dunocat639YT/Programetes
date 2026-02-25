@@ -22,6 +22,13 @@ int main(void) {
     while(!WindowShouldClose()){
 
         controls(KEY_A, &posicióBola.x, velocitatBola);
+        controls(KEY_D, &posicióBola.x, -velocitatBola);
+        controls(KEY_W, &posicióBola.y, velocitatBola);
+        controls(KEY_S, &posicióBola.y, -velocitatBola);
+
+        BeginDrawing();
+
+        DrawCircleV();
     }
 
     CloseWindow();
