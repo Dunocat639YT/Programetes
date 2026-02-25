@@ -1,72 +1,36 @@
-/*******************************************************************************************
-*
-*   raylib [core] example - basic window
-*
-*   Example complexity rating: [★☆☆☆] 1/4
-*
-*   Welcome to raylib!
-*
-*   To test examples, just press F6 and execute 'raylib_compile_execute' script
-*   Note that compiled executable is placed in the same folder as .c file
-*
-*   To test the examples on Web, press F6 and execute 'raylib_compile_execute_web' script
-*   Web version of the program is generated in the same folder as .c file
-*
-*   You can find all basic examples on C:\raylib\raylib\examples folder or
-*   raylib official webpage: www.raylib.com
-*
-*   Enjoy using raylib. :)
-*
-*   Example originally created with raylib 1.0, last time updated with raylib 1.0
-*
-*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,
-*   BSD-like license that allows static linking with closed source software
-*
-*   Copyright (c) 2013-2025 Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
+#include <raylib.h>
 
-#include "raylib.h"
+int main(void) {
 
-//------------------------------------------------------------------------------------
-// Program main entry point
-//------------------------------------------------------------------------------------
-int main(void)
-{
-    // Initialization
-    //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 400;
+    const int screenHeigh = 400;
 
-    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+    InitWindow(screenWidth, screenHeigh, "Bon dia joves");
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-    //--------------------------------------------------------------------------------------
+    SetTargetFPS(60);
 
-    // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
-    {
-        // Update
-        //----------------------------------------------------------------------------------
-        // TODO: Update your variables here
-        //----------------------------------------------------------------------------------
+    Vector2 ballPosition = {screenHeigh/2, screenHeigh/2};
+    const float ballSpeed = 4.0f;
 
-        // Draw
-        //----------------------------------------------------------------------------------
+    while(!WindowShouldClose()) {
+
+        if (IsKeyDown(KEY_LEFT)) ballPosition.x -= ballSpeed;
+        if (IsKeyDown(KEY_RIGHT)) ballPosition.x += ballSpeed;
+        if (IsKeyDown(KEY_DOWN)) ballPosition.y += ballSpeed;
+        if (IsKeyDown(KEY_UP)) ballPosition.y -= ballSpeed;
+
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(WHITE);
 
-            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-
+            DrawCircleV(ballPosition, 40, RED);
+        
         EndDrawing();
-        //----------------------------------------------------------------------------------
+
     }
 
-    // De-Initialization
-    //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+    CloseWindow();
+
 
     return 0;
 }
