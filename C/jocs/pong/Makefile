@@ -1,6 +1,6 @@
 # Variables de compilador i flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -std=c23
+CFLAGS = -Wall -Wextra -Werror -std=c23 -g
 LDFLAGS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
 # Nom de l'executable
