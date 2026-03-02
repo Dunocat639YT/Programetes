@@ -127,7 +127,8 @@ int main(void) {
                     }
                     bola.posició.x = j2.posició.x - bola.radi;
                 }
-                printf("\nVelocitat X: %f \nVelocitat Y: %f", bola.velocitat.x, bola.velocitat.y);
+
+                
 
         EndDrawing();
     }
